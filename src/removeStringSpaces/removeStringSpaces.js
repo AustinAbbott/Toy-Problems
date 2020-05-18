@@ -2,3 +2,6 @@
 // SOLUTION: 
 
 const noSpace = (x) => x.split(' ').join('')
+
+
+module.exports = noSpace;
