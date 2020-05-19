@@ -16,3 +16,10 @@
 // foo099 -> foo100
 
 // Attention: If the number has leading zeros the amount of digits should be considered.
+
+function stringIncrementor(string) {
+
+
+}
+
+module.exports = stringIncrementor;
