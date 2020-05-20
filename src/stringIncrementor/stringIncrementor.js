@@ -17,9 +17,30 @@
 
 // Attention: If the number has leading zeros the amount of digits should be considered.
 
-function stringIncrementor(string) {
+// NOTE: Use `nmp run test` to see results
 
+function incrementString(strng) {
+  // return incrementedString
 
+  let letterStr = "";
+  let numberStr = "";
+
+  for (let i = 0; i < strng.length; i++) {
+    if (!Number(strng[i])) {
+      letterStr += strng[i];
+    } else {
+      numberStr += strng[i];
+    }
+  }
+
+  let addedValue = Number(numberStr) + 1;
+
+  return letterStr + (addedValue || "1");
 }
 
-module.exports = stringIncrementor;
+// iterate, if !Number(value[i]) add to new string
+// if so, push to number string
+
+// return text string + number string + 1 || 1
+
+module.exports = incrementString;
