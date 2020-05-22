@@ -21,21 +21,29 @@
 
 function incrementString(strng) {
   // return incrementedString
-
-  let letterStr = "";
-  let numberStr = "";
-
+  
+  let letterStr = ''
+  let numberStr = ''
+  
   for (let i = 0; i < strng.length; i++) {
     if (!Number(strng[i])) {
-      letterStr += strng[i];
+      letterStr += strng[i]
     } else {
-      numberStr += strng[i];
+      numberStr += strng[i]
     }
   }
-
+  
   let addedValue = Number(numberStr) + 1;
-
-  return letterStr + (addedValue || "1");
+  
+  if (addedValue % 10 === 0 && letterStr[letterStr.length - 1] === '0') {
+    letterStr = letterStr.slice(0, letterStr.length - 1)
+  }
+  
+  if (letterStr[letterStr.length - 1] === '0' && addedValue === 1) {
+   letterStr = letterStr.slice(0, letterStr.length - 1)
+  }
+  
+  return letterStr + addedValue
 }
 
 // iterate, if !Number(value[i]) add to new string
